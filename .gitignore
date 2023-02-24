@@ -247,3 +247,5 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,python
 
 data
+urbansound8k
+files_h5py
