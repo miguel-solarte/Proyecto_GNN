@@ -20,7 +20,7 @@ if __name__ == '__main__':
     X_tensor = torch.tensor(X)
     y_tensor = torch.tensor(y)
 
-    f = h5py.File("TF_vggish.hdf5", "w")
+    f = h5py.File("../files_h5py/TF_encodec.hdf5", "w")
     dset = f.create_dataset("features", X_tensor.shape, data = X_tensor)
     dset = f.create_dataset("labels", y_tensor.shape, data = y_tensor)
     f.close()

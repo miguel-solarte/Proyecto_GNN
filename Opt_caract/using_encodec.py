@@ -38,7 +38,8 @@ def embeddingsLabels(df, path, model):
         del embeddings
         
         if index == 10:
-          break
+            break
+        
         
     #X = torch.cat(emb,0)
     y = np.array(y)
