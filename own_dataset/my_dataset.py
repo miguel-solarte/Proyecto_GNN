@@ -43,8 +43,8 @@ class MyOwnDatasetFixedKnn(Dataset):
 
           Idx_train, Idx_test, Idx_val = self._CrossVal(self.df, test_i, val_j)
 
-          X_tensor_norm = self._normalizacion_tensor(self, X_tensor, Idx_train)
-          data = self._get_graph(X_tensor_norm, Y_tensor, Idx_train, Idx_test, Idx_val, k)
+          X_tensor_norm = self._normalizacion_tensor(X_tensor, Idx_train)
+          data = self._get_graph(X_tensor_norm, Y_tensor, Idx_train, Idx_test, Idx_val, 5)
 
           test_i = (test_i + 1)%11
           val_j = (val_j + 1)%11    
