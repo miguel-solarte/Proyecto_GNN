@@ -37,8 +37,8 @@ def embeddingsLabels(df, path, model):
         y.append(row["classID"])
         del embeddings
         
-        if index == 10:
-            break
+        #if index == 10:
+            #break
         
         
     #X = torch.cat(emb,0)
