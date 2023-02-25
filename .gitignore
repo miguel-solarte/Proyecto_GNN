@@ -249,3 +249,7 @@ $RECYCLE.BIN/
 data
 urbansound8k
 files_h5py
+data_PANNs_fixed_knn
+data_PANNs_varying_knn
+data_encodec_fixed_knn
+data_encodec_varying_knn

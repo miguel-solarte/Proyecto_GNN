@@ -1,14 +1,19 @@
-from my_dataset import MyOwnDataset
-
+from own_dataset.my_dataset import MyOwnDatasetFixedKnn
+from torch_geometric.loader import DataLoader
 from models import GAT, GCN, GraphSAGE
 from train_test import train, test
 
 import numpy as np
 
 if __name__ == '__main__':
+    
     path1 = "UrbanSound8K_8276.csv"
     path2 = "TF_PANNs_8276.hdf5"
-    dataset = MyOwnDataset(root = "./data", path = [path1,path2])
+    dataset = MyOwnDatasetFixedKnn(root = "./own_dataset/data_encodec_fixed_knn", path = [path1,path2])
+    loader_dataset = DataLoader(dataset)
+
+    for graphs in loader_dataset:
+       print(graphs)
 
     acc_gat = []
     acc_gcn =[]
