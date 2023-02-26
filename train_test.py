@@ -12,7 +12,7 @@ def test(model, data, mask):
     acc = accuracy(torch.argmax(out, dim = 1)[mask], data.y[mask])
     return acc
 
-def train(model, data, epoch):
+def train(model, data, epoch, enable = False):
     
     f_loss = nn.CrossEntropyLoss()
     optimizer = model.optimizer
@@ -32,9 +32,9 @@ def train(model, data, epoch):
         
         val_acc = test(model, data, data.val_mask)
 
-        
-        if(epoch % 10 == 0):
-            print(f'Epoch {epoch:>3} | Train Loss: {loss:.3f} | Train Acc: '
-            f'{acc*100:>6.2f}% |' f'Val Acc: {val_acc*100:.2f}%')
+        if enable == True:
+            if(epoch % 10 == 0):
+                print(f'Epoch {epoch:>3} | Train Loss: {loss:.3f} | Train Acc: '
+                f'{acc*100:>6.2f}% |' f'Val Acc: {val_acc*100:.2f}%')
           
     return model
