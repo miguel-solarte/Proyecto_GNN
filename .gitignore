@@ -253,3 +253,9 @@ data_PANNs_fixed_knn
 data_PANNs_varying_knn
 data_encodec_fixed_knn
 data_encodec_varying_knn
+data_vggish_fixed_knn
+data_vggish_varying_knn
+data_encodecKmeans_fixed_knn
+data_encodecKmeans_varying_knn
+data_encodecmaxpooling_fixed_knn
+data_encodec_adap_avgpooling_fixed_knn

@@ -9,7 +9,7 @@ import h5py
 
 
 class MyOwnDatasetFixedKnn(Dataset):
-    def __init__(self, root, path, enable = False, transform=None, pre_transform=None, pre_filter=None):
+    def __init__(self, root, path, enable, transform=None, pre_transform=None, pre_filter=None):
       self.path = path
       self.enable = enable
       super().__init__(root, transform, pre_transform, pre_filter)
@@ -20,7 +20,10 @@ class MyOwnDatasetFixedKnn(Dataset):
 
     @property
     def processed_file_names(self):
-        return [f'data_{i}.pt' for i in range(10)]
+        if self.enable == True:
+           return [f'data_{i}.pt' for i in range(110)]
+        else:
+           return [f'data_{i}.pt' for i in range(10)]
 
     def download(self):
         pass
