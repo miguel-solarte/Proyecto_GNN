@@ -46,3 +46,10 @@ if __name__ == '__main__':
     path12 = "TF_encodec_adap_avgpooling.hdf5"
 
     dataset = MyOwnDatasetFixedKnn(root = "./data_encodec_adap_avgpooling_fixed_knn", path = [path11,path12], enable = False)
+
+# ================================================encodec_maxgpooling_adap=================================================
+
+    path13 = "UrbanSound8K_8276.csv"
+    path14 = "TF_encodec_adap_maxpooling.hdf5"
+
+    dataset = MyOwnDatasetFixedKnn(root = "./data_encodec_adap_maxpooling_fixed_knn", path = [path13,path14], enable = False)
