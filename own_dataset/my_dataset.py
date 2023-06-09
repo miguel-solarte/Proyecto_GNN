@@ -1,8 +1,10 @@
 from torch_geometric.data import Dataset, Data
 from torch_geometric.nn import knn_graph
 
+
 import os.path as osp
 import pandas as pd
+import numpy as np
 import torch
 import h5py
 
@@ -32,7 +34,7 @@ class MyOwnDatasetFixedKnn(Dataset):
       self.df = pd.read_csv(self.raw_paths[0])
       self.data = h5py.File(self.raw_paths[1], 'r')
 
-      X_tensor = torch.tensor(self.data['features'])
+      X_tensor = torch.tensor(np.array(self.data['features']))
       Y_tensor = torch.tensor(self.data['labels'])
 
       test_i = 1
@@ -128,12 +130,14 @@ class MyOwnDatasetFixedKnn(Dataset):
 
     #Se crea las conexines de los nodos
 
+      print(y == None)
+
       edge_index = knn_graph(x, k=val_k, batch=y, loop=False)
 
 
     #Creacion del grafo 
 
-      data = Data(x=x, edge_index= edge_index, y = y , train_mask = train_mask, test_mask = test_mask, val_mask = val_mask)
+      data = Data(x=x, edge_index= edge_index, y = y, train_mask = train_mask, test_mask = test_mask, val_mask = val_mask)
   
       return data
 

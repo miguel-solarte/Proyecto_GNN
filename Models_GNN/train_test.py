@@ -8,7 +8,7 @@ def accuracy(pred_y, y):
 def test(model, data, mask):
     
     model.eval()
-    out = model(data.x, data.edge_index)
+    out = model(data.x.to(torch.float32), data.edge_index)
     acc = accuracy(torch.argmax(out, dim = 1)[mask], data.y[mask])
     return acc
 
@@ -22,7 +22,7 @@ def train(model, data, epoch, enable = False):
     for epoch in range(epochs+1):
         
         optimizer.zero_grad()
-        out = model(data.x, data.edge_index)
+        out = model(data.x.to(torch.float32), data.edge_index)
         loss = f_loss(out[data.train_mask], data.y[data.train_mask])
         acc = accuracy(torch.argmax(out, dim = 1)[data.train_mask], data.y[data.train_mask])
         loss.backward()

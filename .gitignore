@@ -246,17 +246,9 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,macos,python
 
-data
-urbansound8k
-files_h5py
-data_PANNs_fixed_knn
-data_PANNs_varying_knn
-data_encodec_fixed_knn
-data_encodec_varying_knn
-data_vggish_fixed_knn
-data_vggish_varying_knn
-data_encodecKmeans_fixed_knn
-data_encodecKmeans_varying_knn
-data_encodecmaxpooling_fixed_knn
-data_encodec_adap_avgpooling_fixed_knn
-data_encodec_adap_maxpooling_fixed_knn
+
+
+*.hdf5
+*.csv
+*.pt
+*.wav
