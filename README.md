@@ -1,4 +1,4 @@
-# Clasificacion de audios con modelos basados en grafos
+# Clasificación de audios con modelos basados en grafos
 
 ~~En este repositorio...~~
 
