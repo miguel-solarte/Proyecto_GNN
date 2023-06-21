@@ -66,7 +66,7 @@ if __name__ == '__main__':
 
 # ================================================YaMNet=================================================
 
-    path17 = "UrbanSound8K_t4_6864.csv"
+    path17 = "UrbanSound8K.csv"
     path18 = "TF_YaMNet_mean.hdf5"
 
     dataset = MyOwnDatasetFixedKnn(root = "./data_YaMNet_mean_fixed_knn", path = [path17,path18], enable = False)

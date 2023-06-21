@@ -24,7 +24,7 @@ class Wrapper(torch.nn.Module):
 
 if __name__ == '__main__':
 
-    df = pd.read_csv("../Urbansound8k/UrbanSound8K_t4_6864.csv")
+    df = pd.read_csv("../Urbansound8k/UrbanSound8K.csv")
 
 #==============================Encodec====================================================    
 
@@ -52,6 +52,7 @@ if __name__ == '__main__':
     
 
     print(X_array.shape)
+    print(y.shape)
 
     f = h5py.File("../files_h5py/TF_YaMNet_mean.hdf5", "w")
     dset = f.create_dataset("features", X_array.shape, data = X_array)

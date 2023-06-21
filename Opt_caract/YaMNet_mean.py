@@ -25,11 +25,9 @@ def embeddingsLabels(df, path, model):
         
 
             
-        if embeddings.shape == (8,1024):
-            emb.append(torch.mean(embeddings, 0).tolist())
-        else:
-            embeddings = embeddings[:,:8]    
-            emb.append(torch.mean(embeddings, 0).tolist())
+        
+        emb.append(torch.mean(embeddings, 0).tolist())
+        
         
         y.append(row["classID"])
         del embeddings
